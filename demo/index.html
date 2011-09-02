@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>Demo</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="../jquery.imageTabs.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script type="text/javascript">
+      $(function(){
+        $('.tabs').imageTabs({width: 300, height: 150, slideshow: 5000});
+
+        $('.tabs2').imageTabs({width: 300, height: 150, slideshow: 2500, itemClass: 'tab2'});
+      })
+    </script>
+
+    <style type="text/css">
+      body{
+        font-family: Arial;
+        font-size: 13px;
+      }
+      a{
+        color: #111;
+      }
+
+      .links{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        margin:0;
+        padding:0;
+        z-index: 2;
+      }
+      .links li{
+        list-style-type: none;
+        margin:0 5px 0 0;
+        float:left;
+      }
+      .links a{
+        display:block;
+        background: white;
+        border: 1px solid black;
+        text-decoration: none;
+        padding: 0 3px;
+      }
+      .links a.active{
+        background: #111;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Demo jquery.imageTabs</h1>
+    <ul>
+      <li>jquery: 1.6.2</li>
+      <li>jquery.imageTabs: 0.2</li>
+    </ul>
+
+
+    <h2>Slide 1</h2>
+    <div class="tabs">
+      <div id="tab1" class="tab">
+        <img src="imgs/6098875849_2853430076.jpg" width="300" alt="" />
+      </div>
+      <div id="tab2" class="tab">
+        <img src="imgs/6098879513_f2bdaaca44.jpg" width="300" alt="" />
+      </div>
+      <div id="tab3" class="tab">
+        <img src="imgs/6099479628_63b0cd0225.jpg" width="300" alt="" />
+      </div>
+      <ul class="links">
+        <li><a class="active" href="#tab1">1</a></li>
+        <li><a href="#tab2">2</a></li>
+        <li><a href="#tab3">3</a></li>
+      </ul>
+    </div>
+
+
+
+    <h2>Slide 2</h2>
+    <div class="tabs2">
+      <div id="tab21" class="tab2">
+        <img src="imgs/6099654808_1e6f95a2f4.jpg" width="300" alt="" />
+      </div>
+      <div id="tab22" class="tab2">
+        <img src="imgs/6099901460_b1e69b7736.jpg" width="300" alt="" />
+      </div>
+      <div id="tab23" class="tab2">
+        <img src="imgs/6101273827_c934a070bd.jpg" width="300" alt="" />
+      </div>
+      <ul class="links">
+        <li><a class="active" href="#tab21">1</a></li>
+        <li><a href="#tab22">2</a></li>
+        <li><a href="#tab23">3</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

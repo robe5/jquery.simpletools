@@ -2,52 +2,20 @@
   <head>
     <title>Demo</title>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="../jquery.imageTabs.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="../src/jquery.imageTabs.js"></script>
+    <script type="text/javascript" src="../src/jquery.carousel.js"></script>
+    <script type="text/javascript" src="../src/jquery.placeholder.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
 
     <script type="text/javascript">
       $(function(){
         $('.tabs').imageTabs({width: 300, height: 150, slideshow: 5000});
 
-        $('.tabs2').imageTabs({width: 300, height: 150, slideshow: 2500, itemClass: 'tab2'});
+        $('.tabs2').imageTabs({width: 300, height: 150, slideshow: false, itemClass: 'tab2'});
       })
     </script>
-
-    <style type="text/css">
-      body{
-        font-family: Arial;
-        font-size: 13px;
-      }
-      a{
-        color: #111;
-      }
-
-      .links{
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        margin:0;
-        padding:0;
-        z-index: 2;
-      }
-      .links li{
-        list-style-type: none;
-        margin:0 5px 0 0;
-        float:left;
-      }
-      .links a{
-        display:block;
-        background: white;
-        border: 1px solid black;
-        text-decoration: none;
-        padding: 0 3px;
-      }
-      .links a.active{
-        background: #111;
-        color: white;
-      }
-    </style>
   </head>
+
   <body>
 
     <h1>Demo jquery.imageTabs</h1>
@@ -56,17 +24,17 @@
       <li>jquery.imageTabs: 0.2</li>
     </ul>
 
-
     <h2>Slide 1</h2>
+    <pre>$('.tabs').imageTabs({width: 300, height: 150, slideshow: 5000});</pre>
     <div class="tabs">
       <div id="tab1" class="tab">
-        <img src="imgs/6098875849_2853430076.jpg" width="300" alt="" />
+        <img src="images/6098875849_2853430076.jpg" width="300" alt="" />
       </div>
       <div id="tab2" class="tab">
-        <img src="imgs/6098879513_f2bdaaca44.jpg" width="300" alt="" />
+        <img src="images/6098879513_f2bdaaca44.jpg" width="300" alt="" />
       </div>
       <div id="tab3" class="tab">
-        <img src="imgs/6099479628_63b0cd0225.jpg" width="300" alt="" />
+        <img src="images/6099479628_63b0cd0225.jpg" width="300" alt="" />
       </div>
       <ul class="links">
         <li><a class="active" href="#tab1">1</a></li>
@@ -75,18 +43,17 @@
       </ul>
     </div>
 
-
-
     <h2>Slide 2</h2>
+    <pre>$('.tabs2').imageTabs({width: 300, height: 150, slideshow: false, itemClass: 'tab2'});</pre>
     <div class="tabs2">
       <div id="tab21" class="tab2">
-        <img src="imgs/6099654808_1e6f95a2f4.jpg" width="300" alt="" />
+        <img src="images/6099654808_1e6f95a2f4.jpg" width="300" alt="" />
       </div>
       <div id="tab22" class="tab2">
-        <img src="imgs/6099901460_b1e69b7736.jpg" width="300" alt="" />
+        <img src="images/6099901460_b1e69b7736.jpg" width="300" alt="" />
       </div>
       <div id="tab23" class="tab2">
-        <img src="imgs/6101273827_c934a070bd.jpg" width="300" alt="" />
+        <img src="images/6101273827_c934a070bd.jpg" width="300" alt="" />
       </div>
       <ul class="links">
         <li><a class="active" href="#tab21">1</a></li>
@@ -94,5 +61,82 @@
         <li><a href="#tab23">3</a></li>
       </ul>
     </div>
+
+
+    <script type="text/javascript">
+      $(function(){
+        $('.slider').carousel({
+          slides: 2,
+          onBeforeSlide: function(data){
+            console.info("before")
+          },
+          onAfterSlide: function(data){
+            console.info("after")
+          }
+        });
+        $('.next').click(function(evt){
+          evt.preventDefault();
+          $('.slider').carousel('next');
+        });
+        $('.prev').click(function(evt){
+          evt.preventDefault();
+          $('.slider').carousel('prev');
+        });
+      });
+    </script>
+    <h1>Demo jquery.carousel</h1>
+    <ul>
+      <li>jquery: 1.6.2</li>
+      <li>jquery.carousel: 0.1</li>
+    </ul>
+
+    <pre>$('.slider').carousel({slides: 2});</pre>
+    <div class="outer">
+      <div class="slider">
+        <div class="slide">
+          <img src="images/71093554_0e1694aeb2_s.jpg" />
+          <h2>Imagen 1</h2>
+          <span class="txt">13 photos | From John Doe</span>
+          <p>Lorem ipsum...
+        </div>
+
+        <div class="slide">
+          <img src="images/415544757_87a1d52e28_s.jpg" />
+          <h2>Imagen 2</h2>
+          <span class="txt">13 photos | From John Doe</span>
+          <p>Lorem ipsum...
+        </div>
+
+        <div class="slide">
+          <img src="images/2500145549_f08f0bfc90_s.jpg" />
+          <h2>Imagen 3</h2>
+          <span class="txt">13 photos | From John Doe</span>
+          <p>Lorem ipsum...
+        </div>
+
+        <div class="slide">
+          <img src="images/229081071_5e6d583664_s.jpg" />
+          <h2>Imagen 4</h2>
+          <span class="txt">13 photos | From John Doe</span>
+          <p>Lorem ipsum...
+        </div>
+
+        <div class="slide">
+          <img src="images/26236752_b2fee4c548_s.jpg" />
+          <h2>Imagen 5</h2>
+          <span class="txt">13 photos | From John Doe</span>
+          <p>Lorem ipsum...
+        </div>
+
+        <div class="slide">
+          <img src="images/5163020_4d3a861311_s.jpg" />
+          <h2>Imagen 6</h2>
+          <span class="txt">13 photos | From John Doe</span>
+          <p>Lorem ipsum...
+        </div>
+      </div>
+      <a class="prev" href="#prev">prev</a> <a class="next" href="#next">next</a>
+    </div>
+    <div class="footer"></div>
   </body>
 </html>

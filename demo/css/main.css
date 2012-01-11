@@ -1,0 +1,68 @@
+body{
+  font-family: Arial;
+  font-size: 13px;
+}
+a{
+  color: #111;
+}
+
+.footer{
+  height:200px;
+}
+
+.links{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  margin:0;
+  padding:0;
+  z-index: 2;
+}
+.links li{
+  list-style-type: none;
+  margin:0 5px 0 0;
+  float:left;
+}
+.links a{
+  display:block;
+  background: white;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 0 3px;
+}
+.links a.active{
+  background: #111;
+  color: white;
+}
+
+
+
+.outer{
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 696px;
+}
+
+.slider{
+  overflow:hidden;
+  width: 232px;
+}
+
+.slide{
+  border: 1px solid #ccc;
+  width: 230px;
+  overflow:hidden;
+  float:left;
+}
+
+.slide img{
+  float:left;
+  margin: 0 10px 10px 0;
+}
+.slide h2{
+  margin: 0;
+}
+.slide .txt{
+  font-size: 12px;
+  color: #999;
+}
